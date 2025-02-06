@@ -11,7 +11,7 @@ class EventoDAO {
     public function inserirEvento(Evento $evento) {
 
         $sql = "INSERT INTO eventos 
-                (tipo, data, orcamento, qnt_convidados, local_evento, nome_aniversariante, tema_festa, noivo, noiva)
+                (tipo, data, orcamento, qntConvidados, local, nome_aniversariante, tema_festa, noivo, noiva)
                 VALUES
                 (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -103,8 +103,8 @@ class EventoDAO {
             $evento->setId($reg['id']);
             $evento->setData($reg['data']);
             $evento->setOrcamento($reg['orcamento']);
-            $evento->setQntConvidados($reg['qnt_convidados']);
-            $evento->setLocal($reg['local_evento']);
+            $evento->setQntConvidados($reg['qntConvidados']);
+            $evento->setLocal($reg['local']);
             array_push($eventos, $evento);
         }
         return $eventos;
