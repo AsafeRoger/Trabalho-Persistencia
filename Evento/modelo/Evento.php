@@ -4,6 +4,7 @@ abstract class Evento {
 
     //Atributos
     protected int $id;
+    
     protected $data;
     protected int $orcamento;
     protected int $qntConvidados;
@@ -14,13 +15,9 @@ abstract class Evento {
 
     public abstract function getTipo();
 
-    public function getIdentificacao(){
-        return $this->nome;
-    }
 
- 
 
- 
+   
 
     /**
      * Get the value of id
@@ -43,7 +40,7 @@ abstract class Evento {
     /**
      * Get the value of data
      */
-    public function getData(): int
+    public function getData()
     {
         return $this->data;
     }
@@ -51,7 +48,7 @@ abstract class Evento {
     /**
      * Set the value of data
      */
-    public function setData(int $data): self
+    public function setData($data): self
     {
         $this->data = $data;
 
@@ -97,7 +94,7 @@ abstract class Evento {
     /**
      * Get the value of local
      */
-    public function getLocal(): int
+    public function getLocal(): string
     {
         return $this->local;
     }
@@ -105,9 +102,27 @@ abstract class Evento {
     /**
      * Set the value of local
      */
-    public function setLocal(int $local): self
+    public function setLocal(string $local): self
     {
         $this->local = $local;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nome
+     */
+    public function getNome(): string
+    {
+        return $this->nome;
+    }
+
+    /**
+     * Set the value of nome
+     */
+    public function setNome(string $nome): self
+    {
+        $this->nome = $nome;
 
         return $this;
     }
