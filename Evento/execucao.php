@@ -2,12 +2,7 @@
 require_once("modelo/Evento.php");
 require_once("modelo/Aniversario.php");
 require_once("modelo/Casamento.php");
-require_once("dao/EventoDAO.php"); // Alterei para EventoDAO
-
-//Teste da conexão
-/*require_once("util/Conexao.php");
-$con = Conexao::getCon();
-print_r($con);*/
+require_once("DAO/EventoDAO.php");
 
 do {
     echo "\n\n----TABELA DE EVENTOS----\n";
@@ -108,7 +103,8 @@ do {
             if($evento) {
                 $eventoDAO->excluirPorId($id);
                 echo "Evento excluído com sucesso!\n";
-            } else {
+
+                            } else {
                 echo "Evento não encontrado!\n";
             }
             break;
